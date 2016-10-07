@@ -1,0 +1,75 @@
+ private TrieNode insert(TrieNode t, char x){
+        //if Tie is empty
+        if(t== null){
+            //ind = 0;
+            t = new TrieNode(x, null, null, null);
+            return t;
+        }
+        //there's stuff in there
+        else{
+            //insert below
+            if(t.equal == null)
+            {
+                t.equal = insert(t.equal, x);
+                System.out.printf("Equal Child: %c\n", x);
+            }
+            else
+                System.out.println("NOT EQUAL");
+
+        }
+
+        /* if(x > t.key){
+           t.right = insert(t.right, x);
+           System.out.printf("Right Child: %c\n", x);
+           return t;
+        }
+
+        else if(x < t.key){
+        t.left = insert(t.left, x);
+        System.out.printf("Left child: %c\n", x);
+        return t;
+
+        }
+
+        else if (x == t.key){
+        t.equal = insert(t.equal, x);
+        System.out.printf("Equal child: %c\n", x);
+        return t;
+        }
+
+        //In case of first word, everything is an equal child
+        /*if(ind ==0){
+        t.equal = insert(t.equal, x);
+        System.out.printf("Equal Child: %c\n", x);
+        }
+
+        //More words into tree, creating branches of right, left, and equal children
+
+
+        //Greater than
+        /*if(x > t.key && ind !=0){
+          // no right child
+        if (t.right == null){
+        t.right = insert(t.right, x);
+        System.out.printf("Right Child: %c\n", x);
+        }
+
+        //there is right child
+        /* else{
+        while(x > t.right){
+        t.right = insert( t.right, x);
+        }
+        while(x < t.right){
+        t.left = insert( t.left, x);
+        }
+        //while(x == t.equal){
+        //t.equal = insert( t.equal,x);
+        }
+        }
+        */
+
+
+
+        return t;
+        }
+
