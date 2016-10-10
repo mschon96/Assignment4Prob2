@@ -21,6 +21,7 @@ public class prob2{
     public static void main(String[] args){
 
         MyTrieTree tree = new MyTrieTree();
+        //size of arrays
 
         //      Practice of toCharArray();
         //        String str = "cat";
@@ -29,7 +30,7 @@ public class prob2{
         //        for(int i = 0; i < cArray.length; i++)
         //        System.out.printf("%c\n", cArray[1]);
 
-        // Scanner variable
+        // Scanner variables
         Scanner input = new Scanner(System.in);
         Scanner insertStr= new Scanner(System.in);
         Scanner searchStr = new Scanner (System.in);
@@ -46,9 +47,10 @@ public class prob2{
             choice = input.nextInt();
 
             switch(choice){
-                case 1:
+                    case 1:
                     System.out.print("Enter string to insert: ");
                     String insName = insertStr.nextLine();
+
                     insName = insName.toLowerCase();
                     System.out.println("");
                     // System.out.printf("String '%s' inserted\n", name);
@@ -63,10 +65,10 @@ public class prob2{
 
                     System.out.println("");
 
-                    //inserting letter by letter into Tree
-                    for (int i = 0; i < insertArr.length; i++){
-                        tree.insert(insertArr[i]);
-                    }
+                    //Entire array
+
+                    tree.insert(insName.toLowerCase());
+                    System.out.printf("%s was inserted!\n", insName);
 
 
                     break;
@@ -92,7 +94,13 @@ public class prob2{
                     //    System.out.printf("%c ", searchArr[i]);
 
                     System.out.println("");
-  System.out.println("SEARCH HERE");
+
+
+                    if(tree.search(sName.toLowerCase()) == true)
+                        System.out.printf("%s was found!\n", sName);
+                    else
+                        System.out.printf("%s was not found!\n", sName);
+
                     break;
 
                 case 4:
@@ -105,5 +113,3 @@ public class prob2{
 
     }
 }
-~                                                                                                              
-~                         
