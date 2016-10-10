@@ -5,6 +5,7 @@ public class TrieNode{
     public TrieNode right;
     public TrieNode equal;
     public int height;
+    public boolean isEnd = false;
 
     TrieNode(char x){
         level++;
